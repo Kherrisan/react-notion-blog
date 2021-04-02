@@ -1,4 +1,4 @@
-import { DiscussionEmbed } from 'disqus-react'
+// import { DiscussionEmbed } from 'disqus-react'
 import Head from 'next/head'
 import { NotionAPI } from 'notion-client'
 import { ExtendedRecordMap } from 'notion-types'
@@ -75,9 +75,9 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
 
             <Pagination pagination={pagination} />
 
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <DiscussionEmbed shortname="spencerwoo" config={{ identifier: formatSlug(post.date, post.slug) }} />
-            </div>
+            </div> */}
           </div>
         </div>
 
