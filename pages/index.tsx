@@ -35,7 +35,7 @@ export interface PostView {
 }
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  return await axios.get(`https://api.kherrisan.com/notion/v1/table/${NOTION_BLOG_ID}`).then(res => res.data)
+  return await axios.get(`https://notion-cloudflare-worker.kherrisan.workers.dev/v1/table/${NOTION_BLOG_ID}`).then(res => res.data)
 }
 
 export const getPostViews = async (): Promise<PostView[]> => {
