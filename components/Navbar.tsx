@@ -45,7 +45,7 @@ const Navbar = () => {
         </Link>
         <a
           className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50"
-          href="https://spencerwoo.com"
+          href="https://kherrisan.com"
           target="_blank"
           rel="noopener noreferrer"
         >

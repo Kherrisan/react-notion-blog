@@ -5,8 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <script async src="https://analytics.spencerwoo.com/sb.js" data-token="P4NLW57KW58Z"></script> */}
-          <script async src="https://cdn.splitbee.io/sb.js"></script>
+          <script async src="https://analytics.kherrisan.com/sb.js"></script>
         </Head>
         <body>
           <Main />
