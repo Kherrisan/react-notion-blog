@@ -23,7 +23,11 @@ export const getStaticProps = async ({ params: { slug } }: { params: { slug: str
 
   const posts = (await getAllPosts()).filter(p => p.published)
   posts.forEach(p => {
-    p.views = postViews.get(formatSlug(p.date, p.slug))!
+    let views = postViews.get(formatSlug(p.date, p.slug))!
+    if(views == undefined){
+      views = 0
+    }
+    p.views = views
   })
 
   // Find the current blogpost by slug

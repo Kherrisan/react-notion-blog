@@ -87,7 +87,11 @@ export const getStaticProps = async () => {
   })
 
   posts.forEach(p => {
-    p.views = postViews.get(formatSlug(p.date, p.slug))!
+    let views = postViews.get(formatSlug(p.date, p.slug))!
+    if (views == undefined) {
+      views = 0;
+    }
+    p.views = views;
   })
 
   return {
