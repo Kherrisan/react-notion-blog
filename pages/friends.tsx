@@ -1,4 +1,3 @@
-import { DiscussionEmbed } from 'disqus-react'
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'

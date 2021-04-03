@@ -119,10 +119,10 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
             <div className="mt-8 text-2xl font-bold">Kherrisan 的博客</div>
             <div className="mt-2 text-gray-400">
               🍯{' '}来点蜂蜜吧
-              {/* <Link href="/friends">
+              <Link href="/friends">
                 <a className="text-purple-400 hover:bg-purple-100 p-1 rounded">
                 </a>
-              </Link>{''} */}
+              </Link>{''}
             </div>
 
             <div className="mt-12 leading-loose flex flex-col space-y-4">
