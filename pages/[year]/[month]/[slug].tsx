@@ -95,7 +95,7 @@ export const getStaticPaths = async () => {
   const table = (await getAllPosts()).filter(p => p.published)
   return {
     paths: table.map(row => formatSlug(row.date, row.slug)),
-    fallback: false
+    fallback: true
   }
 }
 

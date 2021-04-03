@@ -12,66 +12,18 @@ export interface Friend {
 
 const Friends = () => {
   const friends: Friend[] = [
-    {
-      id: '@Felinae',
-      link: 'https://code.felinae98.cn/',
-      avatar: 'https://avatars3.githubusercontent.com/u/23295345?s=160',
-      bgColor: '#473922'
-    },
-    {
-      id: '@agnoCJY',
-      link: 'https://jychuuu.com/',
-      avatar: 'https://avatars1.githubusercontent.com/u/46088026?s=160',
-      bgColor: '#191919'
-    },
-    {
-      id: '@TenkeySeven',
-      link: 'https://blog.tenkeyseven.com/',
-      avatar: 'https://avatars2.githubusercontent.com/u/33371927?s=160',
-      bgColor: '#b59672'
-    },
-    {
-      id: '@Silvester',
-      link: 'https://silvester.wang/',
-      avatar: 'https://avatars0.githubusercontent.com/u/34436920?s=160',
-      bgColor: '#595058'
-    },
-    {
-      id: '@ash0ne',
-      link: 'https://blog.ash0ne.com/',
-      avatar: 'https://avatars3.githubusercontent.com/u/28522665?s=160',
-      bgColor: '#9f8cd1'
-    },
-    {
-      id: '@FKY',
-      link: 'http://blog.fkynjyq.com/',
-      avatar: 'https://avatars2.githubusercontent.com/u/16451516?s=160',
-      bgColor: '#005240'
-    },
-    {
-      id: '@idealclover',
-      link: 'https://idealclover.top/',
-      avatar: 'https://avatars2.githubusercontent.com/u/24428416?s=160',
-      bgColor: '#487747'
-    },
-    {
-      id: '@kastnerorz',
-      link: 'https://github.com/kastnerorz',
-      avatar: 'https://avatars3.githubusercontent.com/u/26199342?s=160',
-      bgColor: '#26498e'
-    },
-    {
-      id: '@Patrick Wu',
-      link: 'https://patrickwu.space/',
-      avatar: 'https://avatars0.githubusercontent.com/u/15316889?s=160',
-      bgColor: '#61a3cf'
-    }
+    // {
+    //   id: '@Felinae',
+    //   link: 'https://code.felinae98.cn/',
+    //   avatar: 'https://avatars3.githubusercontent.com/u/23295345?s=160',
+    //   bgColor: '#473922'
+    // }
   ]
 
   return (
     <>
       <Head>
-        <title>Friends & Guestbook - Spencer&apos;s Blog</title>
+        <title>Friends & Guestbook - Kherrisan&apos;s Blog</title>
       </Head>
       <div className="min-h-screen flex flex-col bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
