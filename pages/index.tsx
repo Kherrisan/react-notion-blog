@@ -35,7 +35,7 @@ export interface PostView {
 }
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  return await axios.get(`https://notion-cloudflare-worker.kherrisan.workers.dev/v1/table/${NOTION_BLOG_ID}`).then(res => res.data.sort((a,b)=> a.date.localeCompare(b.date)).reverse())
+  return await axios.get(`https://notion-cloudflare-worker.kherrisan.workers.dev/v1/table/${NOTION_BLOG_ID}`).then(res => res.data.sort((a:Post,b:Post)=> a.date.localeCompare(b.date)).reverse())
 }
 
 export const getPostViews = async (): Promise<PostView[]> => {
