@@ -24,12 +24,12 @@ const Friends = () => {
       <Head>
         <title>Friends & Guestbook - Kherrisan&apos;s Blog</title>
       </Head>
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
           <Navbar />
 
           <div className="my-16">
-            <div className="mb-12 text-center text-3xl font-bold">Friends & Guestbook</div>
+            <div className="mb-12 text-center text-3xl font-bold dark:text-white">Friends & Guestbook</div>
 
             <div className="flex justify-center items-center flex-wrap space-x-3">
               {friends.map(f => (
@@ -52,7 +52,7 @@ const Friends = () => {
             </div>
 
             <div className="text-center text-gray-400 mt-4">
-              <a className="p-1 rounded text-purple-400 hover:bg-purple-50" href="mailto:zoudikai@outlook.com">
+              <a className="rounded text-purple-400 hover:text-purple-300" href="mailto:zoudikai@outlook.com">
                 Email me
               </a>{' '}
               if you want to get in touch!

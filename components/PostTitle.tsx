@@ -1,26 +1,26 @@
-import { CalendarOutline, EyeOutline, TagOutline } from 'heroicons-react'
+import { CalendarIcon, EyeIcon, TagIcon } from '@heroicons/react/outline'
 import { Post } from '../pages'
 
 const PostTitle = ({ post }: { post: Post }) => {
   return (
     <div className="mb-12 mt-4 px-3">
-      <div className="inline-block text-blue-800 bg-blue-100 px-2 py-1 rounded">
+      <div className="inline-block text-blue-800 bg-blue-100 px-2 py-1 rounded dark:text-yellow-400 dark:bg-gray-700">
         <div className="flex items-center space-x-1">
-          <TagOutline size={16} /> <span>{post.tag}</span>
+          <TagIcon className="w-5 h-5" /> <span>{post.tag}</span>
         </div>
       </div>
 
-      <div className="text-3xl font-bold my-3">{post.name}</div>
+      <div className="text-3xl font-bold my-3 dark:text-white">{post.name}</div>
 
       <div className="text-sm text-gray-400 flex flex-nowrap items-center space-x-2 overflow-hidden">
         <div className="flex items-center space-x-1">
-          <CalendarOutline size={16} />
+          <CalendarIcon className="w-5 h-5" />
           <span>{new Date(post.date).toLocaleDateString()}</span>
         </div>
         <span>·</span>
 
         <div className="flex items-center space-x-1">
-          <EyeOutline size={16} />
+          <EyeIcon className="w-5 h-5" />
           <span>{post.views}</span>
         </div>
         <span>·</span>

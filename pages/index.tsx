@@ -108,7 +108,7 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
       <Head>
         <title>Kherrisan 的博客</title>
       </Head>
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
           <Navbar />
 
@@ -116,11 +116,11 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
             <div className="inline-block shadow-lg rounded-full w-18 h-18">
               <Image className="rounded-full" src="/images/avatar.jpg" alt="avatar" width="100%" height="100%" />
             </div>
-            <div className="mt-8 text-2xl font-bold">Kherrisan 的博客</div>
+            <div className="mt-8 text-2xl font-bold dark:text-white">Kherrisan 的博客</div>
             <div className="mt-2 text-gray-400">
               🍯{' '}来点蜂蜜吧
               <Link href="/friends">
-                <a className="text-purple-400 hover:bg-purple-100 p-1 rounded">
+                <a className="text-purple-400 hover:text-purple-300 rounded">
                 </a>
               </Link>{''}
             </div>
