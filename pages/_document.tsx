@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script async src="https://analytics.kherrisan.com/sb.js"></script>
+          <script async src="https://analytics.kherrisan.com/sb.js" data-token="AFR9C2E5BK03"></script>
         </Head>
         <body>
           <Main />
