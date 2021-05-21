@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar'
 import PostCard from '../components/PostCard'
 import { formatSlug } from '../utils/slugFormat'
 
-const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID || '42725490784d400d89125ad8722545d2'
+const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID || '82b6c0ea-1172-490f-b99a-d0709405af16'
 
 export interface Author {
   id: string
@@ -118,7 +118,7 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
             </div>
             <div className="mt-8 text-2xl font-bold dark:text-white">Kherrisan 的博客</div>
             <div className="mt-2 text-gray-400">
-              🍯{' '}来点蜂蜜吧
+              🌲{' '}黄金树倒了
               <Link href="/friends">
                 <a className="text-purple-400 hover:text-purple-300 rounded">
                 </a>

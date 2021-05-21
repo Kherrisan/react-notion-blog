@@ -1,4 +1,4 @@
-// import { DiscussionEmbed } from 'disqus-react'
+import { DiscussionEmbed } from 'disqus-react'
 import useDarkMode from 'use-dark-mode'
 import Head from 'next/head'
 import { NotionAPI } from 'notion-client'
@@ -25,7 +25,7 @@ export const getStaticProps = async ({ params: { slug } }: { params: { slug: str
   const posts = (await getAllPosts()).filter(p => p.published)
   posts.forEach(p => {
     let views = postViews.get(formatSlug(p.date, p.slug))!
-    if(views == undefined){
+    if (views == undefined) {
       views = 0
     }
     p.views = views
@@ -86,9 +86,10 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
 
             <Pagination pagination={pagination} />
 
-            {/* <div className="mt-8">
-              <DiscussionEmbed shortname="spencerwoo" config={{ identifier: formatSlug(post.date, post.slug) }} />
-            </div> */}
+            <div className="mt-8">
+              <DiscussionEmbed shortname="kherrisan" config={{ identifier: formatSlug(post.date, post.slug) }} />
+            </div>
+
           </div>
         </div>
 
