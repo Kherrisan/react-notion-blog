@@ -29,76 +29,32 @@ export interface Post {
   views: number
 }
 
-export interface PostView {
-  key: string
-  value: number
-}
-
 export const getAllPosts = async (): Promise<Post[]> => {
   return await axios.get(`https://notion-cloudflare-worker.kherrisan.workers.dev/v1/table/${NOTION_BLOG_ID}`).then(res => res.data.sort((a:Post,b:Post)=> a.date.localeCompare(b.date)).reverse())
 }
 
-export const getPostViews = async (): Promise<PostView[]> => {
-  const today = new Date()
-  const aYearBefore = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate())
-
-  // console.log(today.toISOString())
-  // console.log(aYearBefore.toISOString())
-
+export const getPostView = async (slug: string): Promise<number> => {
   return await axios
-    .post(
-      'https://api.splitbee.io/graphql',
-      {
-        query: `query getTopPages($range: TimeRangeInput!, $filter: StatsFilter) {
-        topPages(range: $range, filter: $filter) {
-          key
-          value
-          __typename
-        }
-      }`,
-        operationName: 'getTopPages',
-        variables: {
-          range: {
-            from: aYearBefore.toISOString(),
-            to: today.toISOString()
-          },
-          filter: {}
-        }
-      },
-      {
-        headers: {
-          projectId: 'kherrisan.com',
-          'content-type': 'application/json'
-        }
-      }
-    )
-    .then(res => res.data.data.topPages)
+    .get('https://api.splitbee.io/v1/kherrisan.com/pageviews', {
+      params: { page: slug },
+      headers: { 'x-api-key': 'LWIRJGVYBHGC' }
+    })
+    .then(res => res.data.count)
 }
 
 export const getStaticProps = async () => {
-  const postViews = new Map<string, number>()
-
   const posts = (await getAllPosts()).filter(p => p.published)
-
-  // 获得 post 的阅读量
-  const postViewList = await getPostViews()
-  postViewList.forEach((v: PostView) => {
-    postViews.set(v.key, v.value)
-  })
-
-  posts.forEach(p => {
-    let views = postViews.get(formatSlug(p.date, p.slug))!
-    if (views == undefined) {
-      views = 0;
-    }
-    p.views = views;
-  })
+  await Promise.all(
+    posts.map(async p => {
+      p.views = await getPostView(formatSlug(p.date, p.slug))
+    })
+  )
 
   return {
     props: {
       posts
     },
-    revalidate: 1
+    revalidate: 60
   }
 }
 
