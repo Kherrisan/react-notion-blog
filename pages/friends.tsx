@@ -58,9 +58,9 @@ const Friends = () => {
               if you want to get in touch!
             </div>
 
-            {/* <div className="mt-8">
-              <DiscussionEmbed shortname="spencerwoo" config={{ identifier: 'spencer-blog-guestbook' }} />
-            </div> */}
+            <div className="mt-8">
+              <DiscussionEmbed shortname="blog-kherrisan" config={{ identifier: 'friend-kherrisan' }} />
+            </div>
           </div>
         </div>
 
