@@ -47,7 +47,7 @@ const Navbar = () => {
         </Link>
         <a
 className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50 dark:text-yellow-400 hover:dark:bg-gray-800"
-          href="https://kherrisan.com"
+          href="https://www.kherrisan.cn"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -81,7 +81,7 @@ className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50 dar
             <Link href="/friends">
               <a>Friends</a>
             </Link>
-            <a className="flex items-center" href="https://kherrisan.com" target="_blank" rel="noopener noreferrer">
+            <a className="flex items-center" href="https://www.kherrisan.cn" target="_blank" rel="noopener noreferrer">
               Portfolio
               <ExternalLinkIcon className="ml-2 w-5 h-5" />
             </a>

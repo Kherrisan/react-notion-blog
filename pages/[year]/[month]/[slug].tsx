@@ -60,7 +60,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
   return (
     <>
       <Head>
-        <title>{post.name} - Spencer&apos;s Blog</title>
+        <title>{post.name} - Kherrisan&apos;s Blog</title>
       </Head>
       <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
