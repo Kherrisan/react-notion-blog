@@ -37,7 +37,7 @@ export const getPostView = async (slug: string): Promise<number> => {
   return await axios
     .get('https://api.splitbee.io/v1/kherrisan.com/pageviews', {
       params: { page: slug },
-      headers: { 'x-api-key': 'LWIRJGVYBHGC' }
+      headers: { 'x-api-key': '0D3O364LRBH1' }
     })
     .then(res => res.data.count)
 }
