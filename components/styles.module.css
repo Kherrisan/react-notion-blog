@@ -1,4 +1,4 @@
-@keyframes spinner {
+/* @keyframes spinner {
     to {
       transform: rotate(360deg);
     }
@@ -105,7 +105,7 @@
     width: 100%;
     margin-top: 2em;
     border-top: 1px solid var(--fg-color-0);
-  }
+  } */
   
   .utterances {
     margin-top: 2em;
@@ -118,7 +118,7 @@
     }
   }
   
-  @media only screen and (max-width: 566px) {
+  /* @media only screen and (max-width: 566px) {
     .footer {
       flex-direction: column;
     }
@@ -207,4 +207,4 @@
     .githubCorner .octoArm {
       animation: octocat-wave 560ms ease-in-out;
     }
-  }
+  } */
