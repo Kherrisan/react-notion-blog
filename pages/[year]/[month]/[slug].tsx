@@ -11,6 +11,7 @@ import Navbar from '../../../components/Navbar'
 import Pagination, { PaginationType } from '../../../components/Pagination'
 import PostTitle from '../../../components/PostTitle'
 import { formatSlug } from '../../../utils/slugFormat'
+import { ReactUtterances } from '../../../components/ReactUtterances'
 
 const notion = new NotionAPI()
 
@@ -55,7 +56,17 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
 }) => {
   if (!post) return null
 
-  const darkMode = useDarkMode(false, { classNameDark: 'dark-mode' })
+  const darkMode = useDarkMode(false)
+
+  const comments = (
+    <ReactUtterances
+      repo='Kherrisan/gitalk'
+      issueMap='issue-term'
+      issueTerm='title'
+      // theme={darkMode.value ? 'photon-dark' : 'github-light'}
+      theme='github-light'
+    />
+  )
 
   return (
     <>
@@ -72,15 +83,23 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
               <NotionRenderer
                 recordMap={recordMap}
                 components={{ code: Code, equation: Equation }}
-                darkMode={darkMode.value}
+                darkMode={false}
               />
             </div>
 
             <Pagination pagination={pagination} />
 
-            <div className="mt-8">
+            <ReactUtterances
+              repo='Kherrisan/gitalk'
+              issueMap='issue-term'
+              issueTerm='title'
+              // theme={darkMode.value ? 'photon-dark' : 'github-light'}
+              theme='github-light'
+            />
+
+            {/* <div className="mt-8">
               <DiscussionEmbed shortname="blog-kherrisan" config={{ identifier: formatSlug(post.date, post.slug) }} />
-            </div>
+            </div> */}
 
           </div>
         </div>

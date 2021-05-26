@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import { DiscussionEmbed } from 'disqus-react'
+// import { DiscussionEmbed } from 'disqus-react'
+import useDarkMode from 'use-dark-mode'
+import { ReactUtterances } from '../components/ReactUtterances'
 
 export interface Friend {
   id: string
@@ -19,6 +21,8 @@ const Friends = () => {
     //   bgColor: '#473922'
     // }
   ]
+
+  const darkMode = useDarkMode(false)
 
   return (
     <>
@@ -59,9 +63,17 @@ const Friends = () => {
               if you want to get in touch!
             </div>
 
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <DiscussionEmbed shortname="blog-kherrisan" config={{ identifier: 'friend-kherrisan' }} />
-            </div>
+            </div> */}
+
+            <ReactUtterances
+              repo='Kherrisan/gitalk'
+              issueMap='issue-term'
+              issueTerm='title'
+              // theme={darkMode.value ? 'photon-dark' : 'github-light'}
+              theme='github-light'
+            />
           </div>
         </div>
 
