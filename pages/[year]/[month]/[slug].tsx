@@ -1,5 +1,4 @@
-import { DiscussionEmbed } from 'disqus-react'
-import useDarkMode from 'use-dark-mode'
+// import useDarkMode from 'use-dark-mode'
 import Head from 'next/head'
 import { NotionAPI } from 'notion-client'
 import { ExtendedRecordMap } from 'notion-types'
@@ -56,17 +55,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
 }) => {
   if (!post) return null
 
-  const darkMode = useDarkMode(false)
-
-  const comments = (
-    <ReactUtterances
-      repo='Kherrisan/gitalk'
-      issueMap='issue-term'
-      issueTerm='title'
-      // theme={darkMode.value ? 'photon-dark' : 'github-light'}
-      theme='github-light'
-    />
-  )
+  // const darkMode = useDarkMode(false)
 
   return (
     <>

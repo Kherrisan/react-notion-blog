@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-// import { DiscussionEmbed } from 'disqus-react'
-import useDarkMode from 'use-dark-mode'
+// import useDarkMode from 'use-dark-mode'
 import { ReactUtterances } from '../components/ReactUtterances'
 
 export interface Friend {
@@ -22,7 +21,7 @@ const Friends = () => {
     // }
   ]
 
-  const darkMode = useDarkMode(false)
+  // const darkMode = useDarkMode(false)
 
   return (
     <>
