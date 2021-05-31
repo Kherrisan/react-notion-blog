@@ -72,9 +72,9 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
             <div className="inline-block shadow-lg rounded-full w-18 h-18">
               <Image className="rounded-full" src="/images/avatar.jpg" alt="avatar" width="100%" height="100%" />
             </div>
-            <div className="mt-8 text-2xl font-bold dark:text-white">Kherrisan 的博客</div>
+            <div className="mt-8 text-2xl font-bold dark:text-white">🍯 Kherrisan 的博客</div>
             <div className="mt-2 text-gray-400">
-              🌲{' '}黄金树倒了
+              这里是我的博客，放着我平时写的一些有的没的。
               <Link href="/friends">
                 <a className="text-purple-400 hover:text-purple-300 rounded">
                 </a>
