@@ -1,4 +1,4 @@
-// import useDarkMode from 'use-dark-mode'
+import useDarkMode from 'use-dark-mode'
 import Head from 'next/head'
 import { NotionAPI } from 'notion-client'
 import { ExtendedRecordMap } from 'notion-types'
@@ -55,7 +55,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
 }) => {
   if (!post) return null
 
-  // const darkMode = useDarkMode(false)
+  const darkMode = useDarkMode(false)
 
   return (
     <>
@@ -72,7 +72,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
               <NotionRenderer
                 recordMap={recordMap}
                 components={{ code: Code, equation: Equation }}
-                darkMode={false}
+                darkMode={darkMode.value}
               />
             </div>
 
@@ -82,8 +82,8 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
               repo='Kherrisan/gitalk'
               issueMap='issue-term'
               issueTerm='title'
-              // theme={darkMode.value ? 'photon-dark' : 'github-light'}
-              theme='github-light'
+              theme={darkMode.value ? 'photon-dark' : 'github-light'}
+              // theme='github-light'
             />
 
             {/* <div className="mt-8">

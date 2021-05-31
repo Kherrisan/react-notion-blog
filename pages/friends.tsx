@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-// import useDarkMode from 'use-dark-mode'
+import useDarkMode from 'use-dark-mode'
 import { ReactUtterances } from '../components/ReactUtterances'
 
 export interface Friend {
@@ -21,7 +21,7 @@ const Friends = () => {
     // }
   ]
 
-  // const darkMode = useDarkMode(false)
+  const darkMode = useDarkMode(false)
 
   return (
     <>
@@ -70,8 +70,8 @@ const Friends = () => {
               repo='Kherrisan/gitalk'
               issueMap='issue-term'
               issueTerm='title'
-              // theme={darkMode.value ? 'photon-dark' : 'github-light'}
-              theme='github-light'
+              theme={darkMode.value ? 'photon-dark' : 'github-light'}
+              // theme='github-light'
             />
           </div>
         </div>
