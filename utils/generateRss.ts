@@ -2,22 +2,23 @@ import { Feed } from 'feed'
 import { Post } from '../pages/index'
 import { formatSlug } from './slugFormat'
 
-const domain = 'https://blog.spencerwoo.com'
+const domain = 'https://blog.kherrisan.com'
 
 export const generateRss = (posts: Post[]) => {
   const year = new Date().getFullYear()
   const feed = new Feed({
     id: domain,
     link: domain,
-    title: "Spencer's Blog",
-    copyright: `All rights reserved ${year}, Spencer Woo`,
-    image: `${domain}/favicon.png`,
+    title: "Kherrisan's Blog",
+    copyright: `All rights reserved ${year}, Kherrisan`,
+    image: `${domain}/favicon.ico`,
     favicon: `${domain}/favicon.ico`,
     author: {
-      name: 'Spencer Woo',
-      email: 'spencer.wushangbo@gmail.com',
-      link: 'https://spencerwoo.com'
-    }
+      name: 'Kherrisan',
+      email: 'zdkscope@qq.com',
+      link: 'https://kherrisan.com'
+    },
+    description: 'RSS of Kherrisan\'s blog articles.'
   })
 
   posts.forEach(post => {
