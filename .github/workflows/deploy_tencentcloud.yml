@@ -1,0 +1,47 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Depoly to tencent cloud server
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    env:
+      DEPLOYMENT_HOST: kherrisan.cn
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm i
+    - run: npm run build
+    - name: Deploy to tencent cloud server
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+      with:
+        username: ubuntu
+        server: ${{ secrets.SERVER_IP }}
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        local_path: ./dist/*
+        remote_path: /home/ubuntu/portfolio-react-dist
+    - name: Authorize the nginx to access dist files
+      uses: Flaavius/ssh-commands@1.0
+      with:
+        command: sudo chmod -R 777 /home/ubuntu/portfolio-react-dist
+        host: ${{ secrets.SERVER_IP }}
+        username: ubuntu
+        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
