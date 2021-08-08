@@ -30,18 +30,15 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run build
-    - name: Deploy to tencent cloud server
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+    - name: Pull, build and start next.js server
+      uses: JimCronqvist/action-ssh@0.1.1
       with:
-        username: ubuntu
-        server: ${{ secrets.SERVER_IP }}
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        local_path: ./dist/*
-        remote_path: /home/ubuntu/portfolio-react-dist
-    - name: Authorize the nginx to access dist files
-      uses: Flaavius/ssh-commands@1.0
-      with:
-        command: sudo chmod -R 777 /home/ubuntu/portfolio-react-dist
-        host: ${{ secrets.SERVER_IP }}
-        username: ubuntu
+        # Command(s) to execute on the remote server.
+        command: |
+          export DEPLOYMENT_HOST=kherrisan.cn
+          cd /home/ubuntu/react-notion-blog-dist
+          git pull
+          npm i
+          npm run build
+        hosts: ${{ secrets.SERVER_IP }}
         privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
