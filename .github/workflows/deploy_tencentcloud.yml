@@ -23,13 +23,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm i
-    - run: npm run build
     - name: Pull, build and start next.js server
       uses: JimCronqvist/action-ssh@0.1.1
       with:
@@ -38,6 +31,7 @@ jobs:
           export DEPLOYMENT_HOST=kherrisan.cn
           cd /home/ubuntu/react-notion-blog
           git pull
+          npm i
           npm run build
         hosts: ${{ secrets.SERVER_IP }}
         privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
