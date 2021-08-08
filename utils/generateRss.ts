@@ -2,7 +2,7 @@ import { Feed } from 'feed'
 import { Post } from '../pages/index'
 import { formatSlug } from './slugFormat'
 
-const domain = 'https://blog.kherrisan.com'
+const domain = 'https://blog.' + process.env.DEPLOYMENT_HOST
 
 export const generateRss = (posts: Post[]) => {
   const year = new Date().getFullYear()
@@ -16,9 +16,9 @@ export const generateRss = (posts: Post[]) => {
     author: {
       name: 'Kherrisan',
       email: 'zdkscope@qq.com',
-      link: 'https://kherrisan.com'
+      link: 'https://' + process.env.DEPLOYMENT_HOST
     },
-    description: 'RSS of Kherrisan\'s blog articles.'
+    description: "RSS of Kherrisan's blog articles."
   })
 
   posts.forEach(post => {

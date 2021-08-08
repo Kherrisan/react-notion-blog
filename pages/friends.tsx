@@ -67,9 +67,9 @@ const Friends = () => {
             </div> */}
 
             <ReactUtterances
-              repo='Kherrisan/gitalk'
-              issueMap='issue-term'
-              issueTerm='title'
+              repo="Kherrisan/gitalk"
+              issueMap="issue-term"
+              issueTerm="title"
               theme={darkMode.value ? 'photon-dark' : 'github-light'}
               // theme='github-light'
             />

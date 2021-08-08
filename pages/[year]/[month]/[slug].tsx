@@ -77,9 +77,9 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
             <Pagination pagination={pagination} />
 
             <ReactUtterances
-              repo='Kherrisan/gitalk'
-              issueMap='issue-term'
-              issueTerm='title'
+              repo="Kherrisan/gitalk"
+              issueMap="issue-term"
+              issueTerm="title"
               theme={darkMode.value ? 'photon-dark' : 'github-light'}
               // theme='github-light'
             />
@@ -87,7 +87,6 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
             {/* <div className="mt-8">
               <DiscussionEmbed shortname="blog-kherrisan" config={{ identifier: formatSlug(post.date, post.slug) }} />
             </div> */}
-
           </div>
         </div>
 

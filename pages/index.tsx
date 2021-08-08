@@ -29,7 +29,9 @@ export interface Post {
 }
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  return await axios.get(`https://notion-cloudflare-worker.kherrisan.workers.dev/v1/table/${NOTION_BLOG_ID}`).then(res => res.data.sort((a:Post,b:Post)=> a.date.localeCompare(b.date)).reverse())
+  return await axios
+    .get(`https://notion-cloudflare-worker.kherrisan.workers.dev/v1/table/${NOTION_BLOG_ID}`)
+    .then(res => res.data.sort((a: Post, b: Post) => a.date.localeCompare(b.date)).reverse())
 }
 
 export const getPostView = async (slug: string): Promise<number> => {
@@ -75,9 +77,9 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
             <div className="mt-2 text-gray-400">
               这里是我的博客，放着我平时写的一些有的没的。
               <Link href="/friends">
-                <a className="text-purple-400 hover:text-purple-300 rounded">
-                </a>
-              </Link>{''}
+                <a className="text-purple-400 hover:text-purple-300 rounded"></a>
+              </Link>
+              {''}
             </div>
 
             <div className="mt-12 leading-loose flex flex-col space-y-4">
