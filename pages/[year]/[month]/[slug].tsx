@@ -80,7 +80,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
               repo="Kherrisan/gitalk"
               issueMap="issue-term"
               issueTerm="title"
-              theme={darkMode.value ? 'photon-dark' : 'github-light'}
+              theme={darkMode.value ? 'github-dark-orange' : 'github-light'}
               // theme='github-light'
             />
 
