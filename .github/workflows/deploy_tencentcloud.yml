@@ -36,9 +36,8 @@ jobs:
         # Command(s) to execute on the remote server.
         command: |
           export DEPLOYMENT_HOST=kherrisan.cn
-          cd /home/ubuntu/react-notion-blog-dist
+          cd /home/ubuntu/react-notion-blog
           git pull
-          npm i
           npm run build
         hosts: ${{ secrets.SERVER_IP }}
         privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
