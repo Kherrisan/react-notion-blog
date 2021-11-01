@@ -5,9 +5,16 @@ const Footer = () => {
     <footer className="w-full p-4 text-center text-gray-400 bg-gray-800">
       <div className="container mx-auto">
         <div>
-          <a className="hover:text-white" href="https://beian.miit.gov.cn/#/Integrated/index">苏ICP备 17065958 号-2</a>
+          <a className="hover:text-white" href="https://beian.miit.gov.cn/#/Integrated/index">
+            苏ICP备 17065958 号-2
+          </a>
           ,{' '}
-          <a className="hover:text-white" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32040202000292">苏公网安备 2040202000292 号</a>
+          <a
+            className="hover:text-white"
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32040202000292"
+          >
+            苏公网安备 2040202000292 号
+          </a>
         </div>
         <div>
           Powered by{' '}

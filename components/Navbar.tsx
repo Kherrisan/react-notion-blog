@@ -45,8 +45,9 @@ const Navbar = () => {
             Friends
           </a>
         </Link>
-        <a className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50 dark:text-yellow-400 hover:dark:bg-gray-800"
-          href="https://www.kherrisan.com"
+        <a
+          className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50 dark:text-yellow-400 hover:dark:bg-gray-800"
+          href={'https://www.' + process.env.DEPLOYMENT_HOST}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -80,7 +81,12 @@ const Navbar = () => {
             <Link href="/friends">
               <a>Friends</a>
             </Link>
-            <a className="flex items-center" href="https://www.kherrisan.com" target="_blank" rel="noopener noreferrer">
+            <a
+              className="flex items-center"
+              href={'https://www.' + process.env.DEPLOYMENT_HOST}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Portfolio
               <ExternalLinkIcon className="ml-2 w-5 h-5" />
             </a>
