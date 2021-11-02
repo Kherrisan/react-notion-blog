@@ -71,7 +71,7 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
 
           <div className="my-16">
             <div className="inline-block shadow-lg rounded-full w-18 h-18">
-              <img className="rounded-full" src="/images/avatar.jpg" alt="avatar" width="100%" height="100%" />
+              <img className="rounded-full" src="/images/girl_100x100.jpg" alt="avatar" width="100%" height="100%" />
             </div>
             <div className="mt-8 text-2xl font-bold dark:text-white">🍯 Kherrisan 的博客</div>
             <div className="mt-2 text-gray-400">
